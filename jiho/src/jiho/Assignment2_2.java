@@ -10,7 +10,7 @@ public class Assignment2_2 {
         
         System.out.print("입력하세요: ");
         
-        String word = input.nextLine();
+        String word = input.next();
         
         System.out.println(word);
         
