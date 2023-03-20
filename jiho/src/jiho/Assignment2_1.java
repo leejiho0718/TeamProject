@@ -13,7 +13,7 @@ public class Assignment2_1 {
 		
 		double ct = (5.0/9.0) * (ft - 32);
 		
-		System.out.printf("¼·¾¾ ¿Âµµ´Â %f 'CÀÔ´Ï´Ù.", ct);
+		System.out.printf("¼·¾¾ ¿Âµµ´Â %.2f'CÀÔ´Ï´Ù.", ct);
 		
 		temp.close();
 
