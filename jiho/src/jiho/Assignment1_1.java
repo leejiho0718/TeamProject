@@ -8,7 +8,7 @@ public class Assignment1_1 {
 		System.out.println("2. Delete Photo");
 		System.out.println("3. Edit Photo");
 		System.out.println("4. View Photo");
-		System.err.println("5. Exit");
+		System.out.println("5. Exit");
 	}
 
 }

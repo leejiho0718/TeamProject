@@ -5,9 +5,10 @@ import java.util.Scanner;
 public class Assignment2_1 {
 
 	public static void main(String[] args) {
+		
 		Scanner temp = new Scanner(System.in);
 		
-		System.out.println("화씨 온도를 입력하세요: ");
+		System.out.print("화씨 온도를 입력하세요: ");
 		
 		double ft = temp.nextDouble();
 		
