@@ -1,4 +1,4 @@
-package jiho;
+package assignment_1;
 
 import java.util.Scanner;
 
