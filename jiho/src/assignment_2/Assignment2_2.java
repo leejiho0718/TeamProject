@@ -9,10 +9,10 @@ public class Assignment2_2 {
 				
 		Scanner input = new Scanner(System.in);
 	
-        boolean work = true;	 // while 반복문을 중지시키기 위한 참 거짓 bool형 사용 
+        boolean work = true;	 											// while 반복문을 중지시키기 위한 참 거짓 bool형 사용 
         
         
-        while(work)			 // statement = true -> run = true일 때 무한 반복
+        while(work)															// statement = true -> run = true일 때 무한 반복
         {
         	System.out.print("첫 번째 숫자를 입력하세요: ");
             int n1 = input.nextInt();
@@ -25,10 +25,11 @@ public class Assignment2_2 {
             // Eclipse에서 char형 즉, 문자 하나는 scanner 불가능
             // charAt(); = String으로 저장된 문자열 중에서 한 글자만 선택해서 char 타입으로 바꿔줌 -> (0)은 0번째 인덱스 문자 1개만 출력
             
-        	int result;	//result에는 n1과 n2를 연산한 값을 저장
+            
+        	int result;														//result에는 n1과 n2를 연산한 값을 저장
         	
         	
-            switch(operator) // 조건 - operater
+            switch(operator)												// 조건 - operater
             {
                 case '+': case '1':											// + or 1일 때 
                     result = n1 + n2;										
