@@ -70,8 +70,6 @@ public class Assignment2_2 {
         
         input.close();
         
-        
-        
 	}
 
 }
