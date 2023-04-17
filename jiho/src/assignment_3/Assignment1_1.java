@@ -59,10 +59,10 @@ public class Assignment1_1 {
 			System.out.print("Commodity name: ");				// 물건 이름 입력
 			String stockName = input.next();					// 문자열 변수인 stockName에 문자열(물건 이름) 입력
 
-			System.out.print("Unique number");					// 물건 고유 번호 입력
+			System.out.print("Unique number: ");					// 물건 고유 번호 입력
 			int stockUnique = input.nextInt();					// 정수형 변수인 stockUnique에 정수(고유 번호) 입력
 			
-			System.out.print("The number of commodity");		// 물건 갯수 입력
+			System.out.print("The number of commodity: ");		// 물건 갯수 입력
 			int stockNumber = input.nextInt();					// 정수형 변수인 StockNumber에 정수(물건 잿수) 입력
 		}
 
