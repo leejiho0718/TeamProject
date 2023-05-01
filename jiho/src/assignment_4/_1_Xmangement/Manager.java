@@ -1,14 +1,19 @@
-package xmanagement;
+package assignment_4._1_Xmangement;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Manager {
+	
 	ArrayList<Stock> stocks = new ArrayList<Stock>();
 	Scanner input;
+	
+	// Manager(Scanner input) - Scanner 객체를 받아 입력 변수를 초기화하는 생성자
 	Manager(Scanner input){
 		this.input = input;
 	}
+	
+	// addStock() - Stock 객체를 생성하여 stocks ArrayList에 추가하는 메소드
 	public void addStock() {
 		Stock stock = new Stock();
 		System.out.print("Stock ID: ");
@@ -20,10 +25,13 @@ public class Manager {
 		System.out.print("Today Sale: ");
 		stock.sale = input.nextInt();
 		
-		System.out.print("Today input");
+		System.out.print("Today input: ");
 		stock.stockinput = input.nextInt();	
 		stocks.add(stock);
 	}
+	
+	// deleteStock() - 사용자에게 Stock ID를 입력받아 
+	//                 ArrayList에서 일치하는 Stock ID를 발견 및 삭제하는 메서드
 	public void deleteStock() {
 		System.out.print("Stock ID: ");
 		int stockId = input.nextInt();
@@ -46,6 +54,9 @@ public class Manager {
 			return;
 		}
 	}
+	
+	// editStock() - Stock ID 입력하고 일치하는 Stock ID를 가진 stocks ArrayList 검색
+	//               -> 편집할 필드(ID, 이름, 판매 또는 주식 입력)를 사용자에게 묻는 메서드입니다.
 	public void editStock() {
 		System.out.print("Stock ID: ");
 		int stockId = input.nextInt();
@@ -95,9 +106,11 @@ public class Manager {
 
 		
 	}
+	
+	// viewStocks() - stocks ArrayList에 있는 모든 주식의 정보를 출력하는 메소드
 	public void viewStocks() {
-//		System.out.print("Stock ID: ");
-//		int stockId = input.nextInt();	
+	//  System.out.print("Stock ID: ");
+	//  int stockId = input.nextInt();	
 		
 		for(int i = 0; i<stocks.size(); i++)
 		{
