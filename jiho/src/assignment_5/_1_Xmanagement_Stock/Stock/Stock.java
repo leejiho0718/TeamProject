@@ -83,25 +83,25 @@ public class Stock {
 	
 	public void getStockInput(Scanner input) {
 		
-		System.out.print("Stock ID: ");
-		int id = input.nextInt();
-		this.setId(id);
+		System.out.print("Stock ID: ");		
+		int id = input.nextInt();		// 재고 고유 번호 입력
+		this.setId(id);					// setId 메서드 호출: 인자 - id
 		
 		System.out.print("Stock Name: ");
-		String name = input.next();
-		this.setName(name);
+		String name = input.next();		// 재고 이름 입력
+		this.setName(name);				// setName 메서드 호출: 인자 - name
 		
-		System.out.print("Expiration Date: ");
-		int date = input.nextInt();
-		this.setDate(date);
+		System.out.print("Expiration Date:");	
+		int date = input.nextInt();		// 재고 유통기한 입력
+		this.setDate(date);				// setDate 메서드 호출: 인자 - date
 		
 		System.out.print("Today Sale: ");
-		int sale = input.nextInt();
-		this.setSale(sale);
-		
+		int sale = input.nextInt();		// 재고 판매 갯수 입력
+		this.setSale(sale);				// setSale 메서드 호출: 인자 - sale
+		 
 		System.out.print("Today Order: ");
-		int order = input.nextInt();	
-		this.setOrder(order);
+		int order = input.nextInt();	// 재고 주문(발주) 갯수 입력
+		this.setOrder(order);			// setOrder 메서드 호출: 인자 - order
 	}
 	
 	// PrintInfo() - 재고 정보를 출력하는 메소드.
