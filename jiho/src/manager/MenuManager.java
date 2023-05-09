@@ -1,4 +1,4 @@
-package assignment_5._1_Xmanagement_Manager;
+package manager;
 
 import java.util.Scanner;
 
