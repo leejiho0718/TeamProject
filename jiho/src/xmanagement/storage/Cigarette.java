@@ -1,10 +1,10 @@
-package stock;
+package xmanagement.storage;
 
 import java.util.Scanner;
 
 import assignment_5._1_Xmanagement_Stock.Stock.Stock;
 
-public class Alcohol extends Stock {
+public class Cigarette extends Stock {
 
 	public void getStockInput(Scanner input){
 		

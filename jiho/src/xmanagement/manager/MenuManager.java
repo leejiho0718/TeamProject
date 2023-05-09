@@ -1,4 +1,4 @@
-package manager;
+package xmanagement.manager;
 
 import java.util.Scanner;
 

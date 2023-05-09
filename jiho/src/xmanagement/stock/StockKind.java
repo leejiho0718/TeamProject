@@ -1,4 +1,4 @@
-package stock;
+package xmanagement.stock;
 
 public enum StockKind {
 

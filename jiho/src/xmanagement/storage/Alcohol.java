@@ -1,10 +1,10 @@
-package stock;
+package xmanagement.storage;
 
 import java.util.Scanner;
 
 import assignment_5._1_Xmanagement_Stock.Stock.Stock;
 
-public class Sundries extends Stock {
+public class Alcohol extends Stock {
 
 	public void getStockInput(Scanner input){
 		
@@ -17,7 +17,7 @@ public class Sundries extends Stock {
 		this.setName(name);					// setId 메서드 호출: 인자 - id
 
 		char answer = 'x';					// answer을 x로 초기화
-			
+		
 		// answer의 값이 'y', 'Y', 'n', 'N' 아닐 경우에 반복
 		while (answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N')
 		{

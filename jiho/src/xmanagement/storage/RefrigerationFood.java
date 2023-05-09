@@ -1,4 +1,4 @@
-package stock;
+package xmanagement.storage;
 
 import java.util.Scanner;
 
