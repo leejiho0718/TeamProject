@@ -15,6 +15,10 @@ public class Stock {
 		
 	}
 	
+	public Stock(StockKind kind) {
+		this.kind = kind;
+	}
+	
 	// String name, int id
 	// - 2개의 파라미터를 받아 해당 변수를 초기화하는 생성자
 	public Stock(String name, int id) {
@@ -32,6 +36,8 @@ public class Stock {
 		this.order = order;
 	}
 	
+	
+
 	// Getter & Setter
 	public StockKind getKind() {
 		return kind;

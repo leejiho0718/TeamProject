@@ -3,8 +3,13 @@ package assignment_5._1_Xmanagement_Stock.Storage;
 import java.util.Scanner;
 
 import assignment_5._1_Xmanagement_Stock.Stock.Stock;
+import assignment_5._1_Xmanagement_Stock.Stock.StockKind;
 
 public class RefrigerationFood extends Stock {
+
+	public RefrigerationFood(StockKind kind) {
+		super(kind);
+	}
 
 	public void getStockInput(Scanner input){
 		

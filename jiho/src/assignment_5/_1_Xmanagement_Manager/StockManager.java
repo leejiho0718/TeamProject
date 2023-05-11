@@ -1,6 +1,7 @@
 package assignment_5._1_Xmanagement_Manager;
 
 import java.util.ArrayList;
+
 import java.util.Scanner;
 
 import assignment_5._1_Xmanagement_Stock.Stock.Stock;
