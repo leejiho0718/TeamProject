@@ -15,6 +15,13 @@ public class Stock {
 		
 	}
 	
+	// StockKind kind
+	// - 1개의 파라미터를 받아 해당 변수를 초기화하는 생성자
+	public Stock(StockKind kind) {
+		this.kind = kind;
+	}
+	
+	
 	// String name, int id
 	// - 2개의 파라미터를 받아 해당 변수를 초기화하는 생성자
 	public Stock(String name, int id) {
@@ -25,6 +32,17 @@ public class Stock {
 	// String name, int id, int sale, int Order 
 	// - 4개의 파라미터를 받아 해당 변수를 초기화하는 생성자
 	public Stock(String name, int id, int date, int sale, int order) {
+		this.name = name;
+		this.id = id;
+		this.date = date;
+		this.sale = sale;
+		this.order = order;
+	}
+	
+	// StockKind kind, String name, int id, int sale, int Order 
+	// - 5개의 파라미터를 받아 해당 변수를 초기화하는 생성자
+	public Stock(StockKind kind, String name, int id, int date, int sale, int order) {
+		this.kind = kind;
 		this.name = name;
 		this.id = id;
 		this.date = date;
@@ -104,9 +122,44 @@ public class Stock {
 		this.setOrder(order);			// setOrder 메서드 호출: 인자 - order
 	}
 	
+	
 	// PrintInfo() - 재고 정보를 출력하는 메소드.
 	public void PrintInfo() {
-		System.out.println("name:" + name + " id:" + id + " date:" + date + " sale:" + sale + " order:"+ order);
+		
+		String stockKind = "none";	// stockKind 변수 - none 초기화
+		
+		switch(this.kind) {
+		
+		case FrozenFood:			// 냉동음식일 경우
+			stockKind = "FrozenFood";
+			break;					
+			
+		case RefrigerationFood:		// 냉장음식일 경우
+			stockKind = "RefrigerationFood";
+			break;						
+			
+		case RoomTemperatureFood:	// 상온음식일 경우
+			stockKind = "RoomTemperatureFood";
+			break;
+			
+		case Alcohol:				// 주류일 경우
+			stockKind = "Alcohol";
+			break;
+			
+		case Beverage:				// 음료일 경우
+			stockKind = "Beverage";
+			break;
+			
+		case Cigarette:				// 담배일 경우
+			stockKind = "Cigarette";
+			break;
+			
+		case Sundries:				// 잡화일 경우
+			stockKind = "Sundries";
+			break;
+		}
+		
+		System.out.println("kind: " + kind + " name: " + name + " id: " + id + " date: " + date + " sale: " + sale + " order: "+ order);
 	}
 
 }

@@ -1,15 +1,17 @@
 package xmanagement.manager;
 
 import java.util.ArrayList;
+
 import java.util.Scanner;
 
-import assignment_5._1_Xmanagement_Stock.Stock.Stock;
-import assignment_5._1_Xmanagement_Stock.Storage.Alcohol;
-import assignment_5._1_Xmanagement_Stock.Storage.Beverage;
-import assignment_5._1_Xmanagement_Stock.Storage.Cigarette;
-import assignment_5._1_Xmanagement_Stock.Storage.RefrigerationFood;
-import assignment_5._1_Xmanagement_Stock.Storage.RoomTemperatureFood;
-import assignment_5._1_Xmanagement_Stock.Storage.Sundries;
+import xmanagement.stock.Stock;
+import xmanagement.stock.StockKind;
+import xmanagement.stock.Alcohol;
+import xmanagement.stock.Beverage;
+import xmanagement.stock.Cigarette;
+import xmanagement.stock.RefrigerationFood;
+import xmanagement.stock.RoomTemperatureFood;
+import xmanagement.stock.Sundries;
 
 public class StockManager {
 	
@@ -40,49 +42,70 @@ public class StockManager {
 			kind = input.nextInt();					// 물건 종류 입력받기	
 					
 			if (kind == 1) {						// 1: 냉동 식품일 경우
-				stock = new Stock();				// Stockind의 초기값이 FrozenFood이므로 Stock 생성자 호출 
+				
+				// Stockind의 초기값이 FrozenFood이므로 Stock(StockKind kind) 생성자 호출
+				stock = new Stock(StockKind.FrozenFood);
+				
 				stock.getStockInput(input);			// getStockInput 메서드 호출 -> stock 변수에 매게변수(input) 값을 저장
 				stocks.add(stock);					// add 메서드 호출 -> stocks 배열에 매게변수(stock) 값을 저장
 				break;								// break - 반복문 종료
 			}
 			
 			else if (kind == 2) {					// 2: 냉장 식품일 경우
-				stock = new RefrigerationFood();	// Stock 클래스의 stock 변수 = new RefrigerationFood() 생성자 호출
+				
+				// Stock 클래스의 stock 변수 = new RefrigerationFood(StockKind kind) 생성자 호출
+				stock = new RefrigerationFood(StockKind.RefrigerationFood);	
+				
 				stock.getStockInput(input);			// getStockInput 메서드 호출 -> stock 변수에 매게변수(input) 값을 저장
 				stocks.add(stock);					// add 메서드 호출 -> stocks 배열에 매게변수(stock) 값을 저장
 				break;								// break - 반복문 종료
 			}
 			
 			else if (kind == 3) {					// 3: 상온 식품일 경우
-				stock = new RoomTemperatureFood();	// Stock 클래스의 stock 변수 = new RoomTemperatureFood() 생성자 호출 
+				
+				// Stock 클래스의 stock 변수 = new RoomTemperatureFood(StockKind kind) 생성자 호출
+				stock = new RoomTemperatureFood(StockKind.RoomTemperatureFood);	
+				
 				stock.getStockInput(input);			// getStockInput 메서드 호출 -> stock 변수에 매게변수(input) 값을 저장
 				stocks.add(stock);					// add 메서드 호출 -> stocks 배열에 매게변수(stock) 값을 저장
 				break;								// break - 반복문 종료
 			}
 				
 			else if (kind == 4) {					// 4: 주류일 경우
-				stock = new Alcohol();				// Stock 클래스의 stock 변수 = new Alcohol() 생성자 호출 
+				
+				// Stock 클래스의 stock 변수 = new Alcohol(StockKind kind) 생성자 호출
+				stock = new Alcohol(StockKind.Alcohol);			
+				
 				stock.getStockInput(input);			// getStockInput 메서드 호출 -> stock 변수에 매게변수(input) 값을 저장
 				stocks.add(stock);					// add 메서드 호출 -> stocks 배열에 매게변수(stock) 값을 저장
 				break;								// break - 반복문 종료
 			}
 			
 			else if (kind == 5) {					// 5: 음료일 경우
-				stock = new Beverage();				// Stock 클래스의 stock 변수 = new Beverage() 생성자 호출 
+				
+				// Stock 클래스의 stock 변수 = new Beverage(StockKind kind) 생성자 호출 
+				stock = new Beverage(StockKind.Beverage);		
+				
 				stock.getStockInput(input);			// getStockInput 메서드 호출 -> stock 변수에 매게변수(input) 값을 저장
 				stocks.add(stock);					// add 메서드 호출 -> stocks 배열에 매게변수(stock) 값을 저장
 				break;								// break - 반복문 종료
 			}
 			
 			else if (kind == 6) {					// 6: 담배일 경우
-				stock = new Cigarette();			// Stock 클래스의 stock 변수 = new Cigarette() 생성자 호출 
+				
+				// Stock 클래스의 stock 변수 = new Cigarette(StockKind kind) 생성자 호출
+				stock = new Cigarette(StockKind.Cigarette);		
+				
 				stock.getStockInput(input);			// getStockInput 메서드 호출 -> stock 변수에 매게변수(input) 값을 저장
 				stocks.add(stock);					// add 메서드 호출 -> stocks 배열에 매게변수(stock) 값을 저장
 				break;								// break - 반복문 종료
 			}
 			
 			else if (kind == 7) {					// 7: 잡화일 경우
-				stock = new Sundries();				// Stock 클래스의 stock 변수 = new Sundries() 생성자 호출 
+				
+				// Stock 클래스의 stock 변수 = new Sundries(StockKind kind) 생성자 호출
+				stock = new Sundries(StockKind.Sundries);				
+				
 				stock.getStockInput(input);			// getStockInput 메서드 호출 -> stock 변수에 매게변수(input) 값을 저장
 				stocks.add(stock);					// add 메서드 호출 -> stocks 배열에 매게변수(stock) 값을 저장
 				break;								// break - 반복문 종료
