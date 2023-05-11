@@ -22,7 +22,7 @@ public class Alcohol extends Stock {
 		while (answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N')
 		{
 			
-			System.out.println("Is there an Expiration date?? (Y/N)");
+			System.out.println("Is there an Expiration date? (Y/N)");
 			
 			answer = input.next().charAt(0);				// charAt() - String으로 저장된 문자열 중에서 한 글자만 선택해서 char타입으로 변환
 															// 			- 괄호 안에 들어있는 인덱스 번호에 위치한 문자를 char 타입으로 변환
