@@ -9,36 +9,36 @@ public class Alcohol extends Stock {
 	public void getStockInput(Scanner input){
 		
 		System.out.print("Stock ID: ");		
-		int id = input.nextInt();			// Àç°í °íÀ¯ ¹øÈ£ ÀÔ·Â
-		this.setId(id);						// setId ¸Ş¼­µå È£Ãâ: ÀÎÀÚ - id
+		int id = input.nextInt();				// ì¬ê³  ê³ ìœ  ë²ˆí˜¸ ì…ë ¥
+		this.setId(id);						// setId ë©”ì„œë“œ í˜¸ì¶œ: ì¸ì - id
 		
 		System.out.print("Stock Name: ");
-		String name = input.next();			// Àç°í ÀÌ¸§ ÀÔ·Â
-		this.setName(name);					// setId ¸Ş¼­µå È£Ãâ: ÀÎÀÚ - id
+		String name = input.next();				// ì¬ê³  ì´ë¦„ ì…ë ¥
+		this.setName(name);					// setId ë©”ì„œë“œ í˜¸ì¶œ: ì¸ì - id
 
-		char answer = 'x';					// answerÀ» x·Î ÃÊ±âÈ­
+		char answer = 'x';					// answerì„ xë¡œ ì´ˆê¸°í™”
 		
-		// answerÀÇ °ªÀÌ 'y', 'Y', 'n', 'N' ¾Æ´Ò °æ¿ì¿¡ ¹İº¹
+		// answerì˜ ê°’ì´ 'y', 'Y', 'n', 'N' ì•„ë‹ ê²½ìš°ì— ë°˜ë³µ
 		while (answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N')
 		{
 			
 			System.out.println("Is there an Expiration date?? (Y/N)");
 			
-			answer = input.next().charAt(0);				// charAt() - StringÀ¸·Î ÀúÀåµÈ ¹®ÀÚ¿­ Áß¿¡¼­ ÇÑ ±ÛÀÚ¸¸ ¼±ÅÃÇØ¼­ charÅ¸ÀÔÀ¸·Î º¯È¯
-															// 			- °ıÈ£ ¾È¿¡ µé¾îÀÖ´Â ÀÎµ¦½º ¹øÈ£¿¡ À§Ä¡ÇÑ ¹®ÀÚ¸¦ char Å¸ÀÔÀ¸·Î º¯È¯
+			answer = input.next().charAt(0);			// charAt() - Stringìœ¼ë¡œ ì €ì¥ëœ ë¬¸ìì—´ ì¤‘ì—ì„œ í•œ ê¸€ìë§Œ ì„ íƒí•´ì„œ charíƒ€ì…ìœ¼ë¡œ ë³€í™˜
+										// 			- ê´„í˜¸ ì•ˆì— ë“¤ì–´ìˆëŠ” ì¸ë±ìŠ¤ ë²ˆí˜¸ì— ìœ„ì¹˜í•œ ë¬¸ìë¥¼ char íƒ€ì…ìœ¼ë¡œ ë³€í™˜
 			
-			if(answer == 'y' || answer == 'Y') {			// answerÀÇ °ªÀÌ 'y' ¶Ç´Â 'Y' ÀÏ °æ¿ì
+			if(answer == 'y' || answer == 'Y') {			// answerì˜ ê°’ì´ 'y' ë˜ëŠ” 'Y' ì¼ ê²½ìš°
 				
 				System.out.print("Expiration Date:");	
-				int date = input.nextInt();					// Àç°í À¯Åë±âÇÑ ÀÔ·Â
-				this.setDate(date);							// setDate ¸Ş¼­µå È£Ãâ: ÀÎÀÚ - date
-				break;										// break - ¹İº¹¹® Á¾·á
+				int date = input.nextInt();			// ì¬ê³  ìœ í†µê¸°í•œ ì…ë ¥
+				this.setDate(date);				// setDate ë©”ì„œë“œ í˜¸ì¶œ: ì¸ì - date
+				break;						// break - ë°˜ë³µë¬¸ ì¢…ë£Œ
 			}
 			
-			else if(answer == 'n' || answer == 'N') {		// answerÀÇ °ªÀÌ 'n' ¶Ç´Â 'N' ÀÏ °æ¿ì
+			else if(answer == 'n' || answer == 'N') {		// answerì˜ ê°’ì´ 'n' ë˜ëŠ” 'N' ì¼ ê²½ìš°
 				
-				this.setDate(0);							// setDate ¸Ş¼­µå È£Ãâ: ÀÎÀÚ - 0
-				break;										// break - ¹İº¹¹® Á¾·á
+				this.setDate(0);				// setDate ë©”ì„œë“œ í˜¸ì¶œ: ì¸ì - 0
+				break;						// break - ë°˜ë³µë¬¸ ì¢…ë£Œ
 			}
 			
 			else {
@@ -46,49 +46,49 @@ public class Alcohol extends Stock {
 			
 		}
 		
-		answer = 'x';					// answerÀ» x·Î ÃÊ±âÈ­
+		answer = 'x';						// answerì„ xë¡œ ì´ˆê¸°í™”
 		
-		// answerÀÇ °ªÀÌ 'y', 'Y', 'n', 'N' ¾Æ´Ò °æ¿ì¿¡ ¹İº¹
+		// answerì˜ ê°’ì´ 'y', 'Y', 'n', 'N' ì•„ë‹ ê²½ìš°ì— ë°˜ë³µ
 		while (answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N')
 		{
 			
 			System.out.println("Was there a sale this week? (Y/N)");
 			
-			answer = input.next().charAt(0);				// charAt() - StringÀ¸·Î ÀúÀåµÈ ¹®ÀÚ¿­ Áß¿¡¼­ ÇÑ ±ÛÀÚ¸¸ ¼±ÅÃÇØ¼­ charÅ¸ÀÔÀ¸·Î º¯È¯
-															// 			- °ıÈ£ ¾È¿¡ µé¾îÀÖ´Â ÀÎµ¦½º ¹øÈ£¿¡ À§Ä¡ÇÑ ¹®ÀÚ¸¦ char Å¸ÀÔÀ¸·Î º¯È¯
+			answer = input.next().charAt(0);			// charAt() - Stringìœ¼ë¡œ ì €ì¥ëœ ë¬¸ìì—´ ì¤‘ì—ì„œ í•œ ê¸€ìë§Œ ì„ íƒí•´ì„œ charíƒ€ì…ìœ¼ë¡œ ë³€í™˜
+										// 			- ê´„í˜¸ ì•ˆì— ë“¤ì–´ìˆëŠ” ì¸ë±ìŠ¤ ë²ˆí˜¸ì— ìœ„ì¹˜í•œ ë¬¸ìë¥¼ char íƒ€ì…ìœ¼ë¡œ ë³€í™˜
 			
-			if(answer == 'y' || answer == 'Y') {			// answerÀÇ °ªÀÌ 'y' ¶Ç´Â 'Y' ÀÏ °æ¿ì
+			if(answer == 'y' || answer == 'Y') {			// answerì˜ ê°’ì´ 'y' ë˜ëŠ” 'Y' ì¼ ê²½ìš°
 				
 				System.out.print("Today Sale: ");
-				int sale = input.nextInt();					// Àç°í ÆÇ¸Å °¹¼ö ÀÔ·Â
-				this.setSale(sale);							// setSale ¸Ş¼­µå È£Ãâ: ÀÎÀÚ - sale
+				int sale = input.nextInt();			// ì¬ê³  íŒë§¤ ê°¯ìˆ˜ ì…ë ¥
+				this.setSale(sale);				// setSale ë©”ì„œë“œ í˜¸ì¶œ: ì¸ì - sale
 				
 				System.out.println("Are you going to place an order today? (Y/N)");
 				
 				answer = input.next().charAt(0);		
 				
-				if(answer == 'y' || answer == 'Y') {		// answerÀÇ °ªÀÌ 'y' ¶Ç´Â 'Y' ÀÏ °æ¿ì
+				if(answer == 'y' || answer == 'Y') {		// answerì˜ ê°’ì´ 'y' ë˜ëŠ” 'Y' ì¼ ê²½ìš°
 					
 					System.out.print("Today Order: ");
-					int order = input.nextInt();			// Àç°í ÁÖ¹®(¹ßÁÖ) °¹¼ö ÀÔ·Â
-					this.setOrder(order);					// setOrder ¸Ş¼­µå È£Ãâ: ÀÎÀÚ - order
+					int order = input.nextInt();		// ì¬ê³  ì£¼ë¬¸(ë°œì£¼) ê°¯ìˆ˜ ì…ë ¥
+					this.setOrder(order);			// setOrder ë©”ì„œë“œ í˜¸ì¶œ: ì¸ì - order
 				}
 				
-				else if(answer == 'n' || answer == 'N'){	// answerÀÇ °ªÀÌ 'n' ¶Ç´Â 'N' ÀÏ °æ¿ì
+				else if(answer == 'n' || answer == 'N'){	// answerì˜ ê°’ì´ 'n' ë˜ëŠ” 'N' ì¼ ê²½ìš°
 					
-					this.setOrder(0);						// setOrder ¸Ş¼­µå È£Ãâ: ÀÎÀÚ - 0
+					this.setOrder(0);			// setOrder ë©”ì„œë“œ í˜¸ì¶œ: ì¸ì - 0
 				}
 				
 				else {
 				}
 				
-				break;										// break - ¹İº¹¹® Á¾·á
+				break;						// break - ë°˜ë³µë¬¸ ì¢…ë£Œ
 			}
 			
-			else if(answer == 'n' || answer == 'N') {		// answerÀÇ °ªÀÌ 'n' ¶Ç´Â 'N' ÀÏ °æ¿ì
+			else if(answer == 'n' || answer == 'N') {		// answerì˜ ê°’ì´ 'n' ë˜ëŠ” 'N' ì¼ ê²½ìš°
 				
-				this.setSale(0);							// setDate ¸Ş¼­µå È£Ãâ: ÀÎÀÚ - 0
-				break;										// break - ¹İº¹¹® Á¾·á
+				this.setSale(0);				// setDate ë©”ì„œë“œ í˜¸ì¶œ: ì¸ì - 0
+				break;						// break - ë°˜ë³µë¬¸ ì¢…ë£Œ
 			}
 			
 			else {
