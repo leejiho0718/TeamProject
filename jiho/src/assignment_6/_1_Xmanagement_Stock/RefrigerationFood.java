@@ -1,11 +1,13 @@
-package assignment_5._1_Xmanagement_Stock.Storage;
+package assignment_6._1_Xmanagement_Stock;
 
 import java.util.Scanner;
 
-import assignment_5._1_Xmanagement_Stock.Stock.Stock;
-import assignment_5._1_Xmanagement_Stock.Stock.StockKind;
-
 public class RefrigerationFood extends Stock {
+	
+	// RefrigerationFood 생성자 - 매개변수: StockKind 클래스 타입의 kind 변수 
+	public RefrigerationFood(StockKind kind) {
+		super(kind);						// kind를 상속 받음
+	}
 
 	public void getStockInput(Scanner input){
 		

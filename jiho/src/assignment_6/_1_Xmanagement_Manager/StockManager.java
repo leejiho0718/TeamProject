@@ -1,17 +1,17 @@
-package xmanagement.manager;
+package assignment_6._1_Xmanagement_Manager;
 
 import java.util.ArrayList;
 
 import java.util.Scanner;
 
-import xmanagement.stock.Alcohol;
-import xmanagement.stock.Beverage;
-import xmanagement.stock.Cigarette;
-import xmanagement.stock.RefrigerationFood;
-import xmanagement.stock.RoomTemperatureFood;
-import xmanagement.stock.Stock;
-import xmanagement.stock.StockKind;
-import xmanagement.stock.Sundries;
+import assignment_6._1_Xmanagement_Stock.StockKind;
+import assignment_6._1_Xmanagement_Stock.Alcohol;
+import assignment_6._1_Xmanagement_Stock.Beverage;
+import assignment_6._1_Xmanagement_Stock.Cigarette;
+import assignment_6._1_Xmanagement_Stock.RefrigerationFood;
+import assignment_6._1_Xmanagement_Stock.RoomTemperatureFood;
+import assignment_6._1_Xmanagement_Stock.Stock;
+import assignment_6._1_Xmanagement_Stock.Sundries;
 
 public class StockManager {
 	

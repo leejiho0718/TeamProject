@@ -1,15 +1,17 @@
-package assignment_5._1_Xmanagement_Stock.Storage;
+package assignment_6._1_Xmanagement_Stock;
 
 import java.util.Scanner;
 
-import assignment_5._1_Xmanagement_Stock.Stock.Stock;
-import assignment_5._1_Xmanagement_Stock.Stock.StockKind;
-
-public class RefrigerationFood extends Stock {
+public class Beverage extends Stock {
+	
+	// Beverage 생성자 - 매개변수: StockKind 클래스 타입의 kind 변수 
+	public Beverage(StockKind kind) {
+		super(kind);						// kind를 상속 받음
+	}
 
 	public void getStockInput(Scanner input){
 		
-		System.out.print("Stock ID: ");			
+		System.out.print("Stock ID: ");		
 		int id = input.nextInt();			// 재고 고유 번호 입력
 		this.setId(id);						// setId 메서드 호출: 인자 - id
 		
@@ -20,7 +22,7 @@ public class RefrigerationFood extends Stock {
 		System.out.print("Expiration Date:");	
 		int date = input.nextInt();			// 재고 유통기한 입력
 		this.setDate(date);					// setDate 메서드 호출: 인자 - date
-			
+		
 		char answer = 'x';					// answer을 x로 초기화
 		
 		// answer의 값이 'y', 'Y', 'n', 'N' 아닐 경우에 반복
