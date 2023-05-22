@@ -16,36 +16,40 @@ public class MenuManager {
 	public static void selectMenu(Scanner input, StockManager manager) {
 		
 		int num = -1;										// num = -1로 초기화
-		while (num != 6) {									// num이 6이 아니면 반복 -> 즉, num == 6이면 반복 종료
+		while (num != 5) {									// num이 6이 아니면 반복 -> 즉, num == 6이면 반복 종료
 			
 			try {
 				showMenu();
 				
 				num = input.nextInt();
 	
-				if (num==1) 								// num = 1일 때 -> 재고 정보 추가
-				{
+				switch(num) {
+				case 1:								// num = 1일 때 -> 재고 정보 추가
+		
 					manager.addStock();						// manager 개체의 addstock 메서드 불러옴
-				}
+					break;
+
 	
-				else if(num==2) 							// num = 2 일 때 -> 재고 정보 삭제
-				{
+				case 2: 							// num = 2 일 때 -> 재고 정보 삭제
+		
 					manager.deleteStock();					// manager 개체의  deleteStock 메서드 불러옴
-				}
-	
-				else if(num==3) 							// num = 3 일 때 -> 재고 정보 수정
-				{
+					break;
+		
+				case 3:						// num = 3 일 때 -> 재고 정보 수정
+			
 					manager.editStock();					// manager 개체의  editStoc 메서드 불러옴
-				}
-				else if(num==4) 							// num = 4 일 때 -> 재고 정보 확인
-				{
+					break;
+			
+				case 4:						// num = 4 일 때 -> 재고 정보 확인
+			
 					manager.viewStocks();					// manager 개체의 viewStock 메서드 불러옴
-				}
-				
-				else 
-				{
+					break;
+					
+				default :
 					continue;
 				}
+				
+		
 			}
 			catch(InputMismatchException e){
 				System.out.println("Please put an integer between 1 and 5!");

@@ -80,7 +80,7 @@ public abstract class Stock {
 	public int getDate() {
 		return date;
 	}
-
+	
 	public void setDate(int date) throws DateFormatException {
 		String targetDate = "2023";
 		String inputDate = String.valueOf(date);
