@@ -2,6 +2,8 @@ package xmanagement.stock;
 
 import java.util.Scanner;
 
+import xmanagement.exception.DateFormatException;
+
 public interface StockInput {
 
 	public int getId();
@@ -10,7 +12,7 @@ public interface StockInput {
 	
 	public void setName(String name);
 	
-	public void setDate(int date);
+	public void setDate(int date) throws DateFormatException;
 
 	public void setSale(int sale);
 
