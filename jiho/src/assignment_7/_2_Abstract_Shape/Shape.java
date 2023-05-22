@@ -1,4 +1,4 @@
-package assignment_6._2_Abstract_Shape;
+package assignment_7._2_Abstract_Shape;
 
 
 // Shape - 추상 클래스

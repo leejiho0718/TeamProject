@@ -1,4 +1,4 @@
-package assignment_6._2_Abstract_Shape;
+package assignment_7._2_Abstract_Shape;
 
 
 // Rectangle 클래스 - shape 클래스 상속

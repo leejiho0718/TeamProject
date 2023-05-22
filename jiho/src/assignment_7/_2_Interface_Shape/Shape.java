@@ -1,4 +1,4 @@
-package assignment_6._2_Interface_Shape;
+package assignment_7._2_Interface_Shape;
 
 
 //Shape 인터페이스
