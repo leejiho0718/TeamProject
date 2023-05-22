@@ -1,7 +1,7 @@
-package xmanagement.manager;
+package assignment_7._1_Xmanagement_Manager;
 
 import java.util.ArrayList;
-import java.util.InputMismatchException;
+
 import java.util.Scanner;
 
 import xmanagement.stock.Alcohol;
@@ -30,102 +30,91 @@ public class StockManager {
 		
 		int kind = 0;			// 재고 종류 설정
 		StockInput stockInput;			
-		while (kind != 8) {		// 재고는 1~7까지 있으며 8이면 반복문 종료
+		while (kind != 8) {		// 재고는 1~7까지 있으며 8이면 반복문 종료 
 			
-			try {
+			System.out.println("1. Frozen Food");							// 1. 냉동 식품
+			System.out.println("2. Refrigeration Food");					// 2. 냉장 식품
+			System.out.println("3. RoomTemperature Food");					// 3. 상온 식품
+			System.out.println("4. Alcohol");								// 4. 주류
+			System.out.println("5. Beverage");								// 5. 음료
+			System.out.println("6. Cigarette");								// 6. 담배
+			System.out.println("7. Sundries");								// 7. 잡화
+			System.out.print("Select num for Stock Kind from 1 to 7: ");
 			
-				System.out.println("1. Frozen Food");							// 1. 냉동 식품
-				System.out.println("2. Refrigeration Food");					// 2. 냉장 식품
-				System.out.println("3. RoomTemperature Food");					// 3. 상온 식품
-				System.out.println("4. Alcohol");								// 4. 주류
-				System.out.println("5. Beverage");								// 5. 음료
-				System.out.println("6. Cigarette");								// 6. 담배
-				System.out.println("7. Sundries");								// 7. 잡화
-				System.out.print("Select num for Stock Kind from 1 to 7: ");
+			kind = input.nextInt();						// 물건 종류 입력받기	
+					
+			if (kind == 1) {							// 1: 냉동 식품일 경우
 				
-				kind = input.nextInt();						// 물건 종류 입력받기	
-						
-				if (kind == 1) {							// 1: 냉동 식품일 경우
-					
-					// Stockind의 초기값이 FrozenFood이므로 Stock(StockKind kind) 생성자 호출
-					stockInput = new FrozenFood(StockKind.FrozenFood);
-					
-					stockInput.getUserInput(input);			// getUserInput 메서드 호출 -> stock 변수에 매게변수(input) 값을 저장
-					stocks.add(stockInput);					// add 메서드 호출 -> stocks 배열에 매게변수(stock) 값을 저장
-					break;									// break - 반복문 종료
-				}
+				// Stockind의 초기값이 FrozenFood이므로 Stock(StockKind kind) 생성자 호출
+				stockInput = new FrozenFood(StockKind.FrozenFood);
 				
-				else if (kind == 2) {						// 2: 냉장 식품일 경우
-					
-					// Stock 클래스의 stock 변수 = new RefrigerationFood(StockKind kind) 생성자 호출
-					stockInput = new RefrigerationFood(StockKind.RefrigerationFood);	
-					
-					stockInput.getUserInput(input);			// getUserInput 메서드 호출 -> stock 변수에 매게변수(input) 값을 저장
-					stocks.add(stockInput);					// add 메서드 호출 -> stocks 배열에 매게변수(stock) 값을 저장
-					break;									// break - 반복문 종료
-				}
-				
-				else if (kind == 3) {						// 3: 상온 식품일 경우
-					
-					// Stock 클래스의 stock 변수 = new RoomTemperatureFood(StockKind kind) 생성자 호출
-					stockInput = new RoomTemperatureFood(StockKind.RoomTemperatureFood);	
-					
-					stockInput.getUserInput(input);			// getUserInput 메서드 호출 -> stock 변수에 매게변수(input) 값을 저장
-					stocks.add(stockInput);					// add 메서드 호출 -> stocks 배열에 매게변수(stock) 값을 저장
-					break;									// break - 반복문 종료
-				}
-					
-				else if (kind == 4) {						// 4: 주류일 경우
-					
-					// Stock 클래스의 stock 변수 = new Alcohol(StockKind kind) 생성자 호출
-					stockInput = new Alcohol(StockKind.Alcohol);			
-					
-					stockInput.getUserInput(input);			// getUserInput 메서드 호출 -> stock 변수에 매게변수(input) 값을 저장
-					stocks.add(stockInput);					// add 메서드 호출 -> stocks 배열에 매게변수(stock) 값을 저장
-					break;									// break - 반복문 종료
-				}
-				
-				else if (kind == 5) {						// 5: 음료일 경우
-					
-					// Stock 클래스의 stock 변수 = new Beverage(StockKind kind) 생성자 호출 
-					stockInput = new Beverage(StockKind.Beverage);		
-					
-					stockInput.getUserInput(input);			// getUserInput 메서드 호출 -> stock 변수에 매게변수(input) 값을 저장
-					stocks.add(stockInput);					// add 메서드 호출 -> stocks 배열에 매게변수(stock) 값을 저장
-					break;									// break - 반복문 종료
-				}	
-				
-				else if (kind == 6) {						// 6: 담배일 경우
-					
-					// Stock 클래스의 stock 변수 = new Cigarette(StockKind kind) 생성자 호출
-					stockInput = new Cigarette(StockKind.Cigarette);		
-					
-					stockInput.getUserInput(input);			// getUserInput 메서드 호출 -> stock 변수에 매게변수(input) 값을 저장
-					stocks.add(stockInput);					// add 메서드 호출 -> stocks 배열에 매게변수(stock) 값을 저장
-					break;									// break - 반복문 종료
-				}
-				
-				else if (kind == 7) {						// 7: 잡화일 경우
-					
-					// Stock 클래스의 stock 변수 = new Sundries(StockKind kind) 생성자 호출
-					stockInput = new Sundries(StockKind.Sundries);				
-					
-					stockInput.getUserInput(input);			// getUserInput 메서드 호출 -> stock 변수에 매게변수(input) 값을 저장
-					stocks.add(stockInput);					// add 메서드 호출 -> stocks 배열에 매게변수(stock) 값을 저장
-					break;									// break - 반복문 종료
-				}
-				
-				else {										// 1~7이 아닐 경우 다시 선택
-					System.out.println("Select num for Stock Kind from 1 to 7");
-				}
+				stockInput.getUserInput(input);			// getUserInput 메서드 호출 -> stock 변수에 매게변수(input) 값을 저장
+				stocks.add(stockInput);					// add 메서드 호출 -> stocks 배열에 매게변수(stock) 값을 저장
+				break;									// break - 반복문 종료
 			}
-			catch(InputMismatchException e){
-				System.out.println("Please put an integer between 1 and 8!");
+			
+			else if (kind == 2) {						// 2: 냉장 식품일 경우
 				
-				if (input.hasNext()) {
-					input.next();
-				}
-				kind = -1;
+				// Stock 클래스의 stock 변수 = new RefrigerationFood(StockKind kind) 생성자 호출
+				stockInput = new RefrigerationFood(StockKind.RefrigerationFood);	
+				
+				stockInput.getUserInput(input);			// getUserInput 메서드 호출 -> stock 변수에 매게변수(input) 값을 저장
+				stocks.add(stockInput);					// add 메서드 호출 -> stocks 배열에 매게변수(stock) 값을 저장
+				break;									// break - 반복문 종료
+			}
+			
+			else if (kind == 3) {						// 3: 상온 식품일 경우
+				
+				// Stock 클래스의 stock 변수 = new RoomTemperatureFood(StockKind kind) 생성자 호출
+				stockInput = new RoomTemperatureFood(StockKind.RoomTemperatureFood);	
+				
+				stockInput.getUserInput(input);			// getUserInput 메서드 호출 -> stock 변수에 매게변수(input) 값을 저장
+				stocks.add(stockInput);					// add 메서드 호출 -> stocks 배열에 매게변수(stock) 값을 저장
+				break;									// break - 반복문 종료
+			}
+				
+			else if (kind == 4) {						// 4: 주류일 경우
+				
+				// Stock 클래스의 stock 변수 = new Alcohol(StockKind kind) 생성자 호출
+				stockInput = new Alcohol(StockKind.Alcohol);			
+				
+				stockInput.getUserInput(input);			// getUserInput 메서드 호출 -> stock 변수에 매게변수(input) 값을 저장
+				stocks.add(stockInput);					// add 메서드 호출 -> stocks 배열에 매게변수(stock) 값을 저장
+				break;									// break - 반복문 종료
+			}
+			
+			else if (kind == 5) {					// 5: 음료일 경우
+				
+				// Stock 클래스의 stock 변수 = new Beverage(StockKind kind) 생성자 호출 
+				stockInput = new Beverage(StockKind.Beverage);		
+				
+				stockInput.getUserInput(input);			// getUserInput 메서드 호출 -> stock 변수에 매게변수(input) 값을 저장
+				stocks.add(stockInput);					// add 메서드 호출 -> stocks 배열에 매게변수(stock) 값을 저장
+				break;								// break - 반복문 종료
+			}
+			
+			else if (kind == 6) {					// 6: 담배일 경우
+				
+				// Stock 클래스의 stock 변수 = new Cigarette(StockKind kind) 생성자 호출
+				stockInput = new Cigarette(StockKind.Cigarette);		
+				
+				stockInput.getUserInput(input);			// getUserInput 메서드 호출 -> stock 변수에 매게변수(input) 값을 저장
+				stocks.add(stockInput);					// add 메서드 호출 -> stocks 배열에 매게변수(stock) 값을 저장
+				break;								// break - 반복문 종료
+			}
+			
+			else if (kind == 7) {					// 7: 잡화일 경우
+				
+				// Stock 클래스의 stock 변수 = new Sundries(StockKind kind) 생성자 호출
+				stockInput = new Sundries(StockKind.Sundries);				
+				
+				stockInput.getUserInput(input);			// getUserInput 메서드 호출 -> stock 변수에 매게변수(input) 값을 저장
+				stocks.add(stockInput);					// add 메서드 호출 -> stocks 배열에 매게변수(stock) 값을 저장
+				break;								// break - 반복문 종료
+			}
+			
+			else {									// 1~7이 아닐 경우 다시 선택
+				System.out.println("Select num for Stock Kind from 1 to 7");
 			}
 				
 		}

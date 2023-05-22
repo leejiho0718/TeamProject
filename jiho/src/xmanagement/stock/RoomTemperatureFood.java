@@ -2,14 +2,14 @@ package xmanagement.stock;
 
 import java.util.Scanner;
 
-public class RoomTemperatureFood extends Stock {
+public class RoomTemperatureFood extends Stock implements StockInput {
 	
 	// RoomTemperatureFood 생성자 - 매개변수: StockKind 클래스 타입의 kind 변수 
 	public RoomTemperatureFood(StockKind kind) {
 		super(kind);						// kind를 상속 받음
 	}
 
-	public void getStockInput(Scanner input){
+	public void getUserInput(Scanner input){
 		
 		System.out.print("Stock ID: ");		
 		int id = input.nextInt();			// 재고 고유 번호 입력
@@ -56,10 +56,7 @@ public class RoomTemperatureFood extends Stock {
 					this.setOrder(0);						// setOrder 메서드 호출: 인자 - 0
 				}
 				
-				else {
-				}
-				
-				break;										// break - 반복문 종료
+				else break;										// break - 반복문 종료
 			}
 			
 			else if(answer == 'n' || answer == 'N') {		// answer의 값이 'n' 또는 'N' 일 경우
@@ -73,5 +70,47 @@ public class RoomTemperatureFood extends Stock {
 			
 		}
 		
+	}
+	
+	public void PrintInfo() {
+		
+		String stockKind = "none";	// stockKind 변수 - none 초기화
+			
+		switch(this.kind) {
+			
+		case FrozenFood:			// 냉동음식일 경우
+			stockKind = "FrozenFood";
+			break;					
+				
+		case RefrigerationFood:		// 냉장음식일 경우
+			stockKind = "RefrigerationFood";
+			break;						
+				
+		case RoomTemperatureFood:	// 상온음식일 경우
+			stockKind = "RoomTemperatureFood";
+			break;
+				
+		case Alcohol:				// 주류일 경우
+			stockKind = "Alcohol";
+			break;
+				
+		case Beverage:				// 음료일 경우
+			stockKind = "Beverage";
+			break;
+				
+		case Cigarette:				// 담배일 경우
+			stockKind = "Cigarette";
+			break;
+				
+		case Sundries:				// 잡화일 경우
+			stockKind = "Sundries";
+			break;
+		}
+			
+		System.out.println("kind: " + kind + " name: " + name + " id: " + id + " date: " + date + " sale: " + sale + " order: "+ order);
+	}
+
+	public int getId() {
+		return 0;
 	}
 }

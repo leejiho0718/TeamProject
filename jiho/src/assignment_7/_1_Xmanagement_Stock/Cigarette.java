@@ -1,12 +1,11 @@
-package xmanagement.stock;
+package assignment_7._1_Xmanagement_Stock;
 
 import java.util.Scanner;
 
-public class Alcohol extends Stock implements StockInput {
+public class Cigarette extends Stock implements StockInput {
 	
-	
-	// Alcohol 생성자 - 매개변수: StockKind 클래스 타입의 kind 변수 
-	public Alcohol(StockKind kind) {
+	// Cigarette 생성자 - 매개변수: StockKind 클래스 타입의 kind 변수 
+	public Cigarette(StockKind kind) {
 		super(kind);						// kind를 상속 받음
 	}
 
@@ -26,7 +25,7 @@ public class Alcohol extends Stock implements StockInput {
 		while (answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N')
 		{
 			
-			System.out.println("Is there an Expiration date? (Y/N)");
+			System.out.println("Is there an Expiration date?? (Y/N)");
 			
 			answer = input.next().charAt(0);				// charAt() - String으로 저장된 문자열 중에서 한 글자만 선택해서 char타입으로 변환
 															// 			- 괄호 안에 들어있는 인덱스 번호에 위치한 문자를 char 타입으로 변환
@@ -83,10 +82,7 @@ public class Alcohol extends Stock implements StockInput {
 					this.setOrder(0);						// setOrder 메서드 호출: 인자 - 0
 				}
 				
-				else {
-				}
-				
-				break;										// break - 반복문 종료
+				else break;										// break - 반복문 종료
 			}
 			
 			else if(answer == 'n' || answer == 'N') {		// answer의 값이 'n' 또는 'N' 일 경우
@@ -101,7 +97,6 @@ public class Alcohol extends Stock implements StockInput {
 		}
 		
 	}
-	
 	public void PrintInfo() {
 		
 		String stockKind = "none";	// stockKind 변수 - none 초기화
@@ -143,5 +138,4 @@ public class Alcohol extends Stock implements StockInput {
 	public int getId() {
 		return 0;
 	}
-
 }

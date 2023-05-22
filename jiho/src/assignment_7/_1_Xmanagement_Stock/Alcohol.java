@@ -1,4 +1,4 @@
-package xmanagement.stock;
+package assignment_7._1_Xmanagement_Stock;
 
 import java.util.Scanner;
 

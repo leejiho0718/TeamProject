@@ -1,8 +1,6 @@
-package xmanagement.stock;
+package assignment_7._1_Xmanagement_Stock;
 
 import java.util.Scanner;
-
-import xmanagement.exception.DateFormatException;
 
 public abstract class Stock {
 	
@@ -81,12 +79,7 @@ public abstract class Stock {
 		return date;
 	}
 
-	public void setDate(int date) throws DateFormatException {
-		String targetDate = "2023";
-		String inputDate = String.valueOf(date);
-		if(!inputDate.contains(targetDate) || inputDate.equals("")) {
-			throw new DateFormatException();
-		}
+	public void setDate(int date) {
 		this.date = date;
 	}
 
@@ -104,27 +97,6 @@ public abstract class Stock {
 
 	public void setOrder(int order) {
 		this.order = order;
-	}
-	
-	public void setStockDate(Scanner input) {
-		String targetDate = "2023";
-		String inputDate = String.valueOf(date);
-		
-		while(!inputDate.contains(targetDate)) {
-			
-			System.out.println("Expiration Date:");
-			
-			int date = input.nextInt();
-			try {
-				this.setDate(date);
-			}
-			catch(DateFormatException e){
-				System.out.println("Incorrect Date Format, put the Expiration Date that contains 2023");
-				e.printStackTrace();
-				
-			}
-		}
-		
 	}
 	
 	// PrintInfo() - 재고 정보를 출력하는 메소드.

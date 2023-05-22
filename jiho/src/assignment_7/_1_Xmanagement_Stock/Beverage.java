@@ -1,12 +1,11 @@
-package xmanagement.stock;
+package assignment_7._1_Xmanagement_Stock;
 
 import java.util.Scanner;
 
-public class Alcohol extends Stock implements StockInput {
+public class Beverage extends Stock implements StockInput {
 	
-	
-	// Alcohol 생성자 - 매개변수: StockKind 클래스 타입의 kind 변수 
-	public Alcohol(StockKind kind) {
+	// Beverage 생성자 - 매개변수: StockKind 클래스 타입의 kind 변수 
+	public Beverage(StockKind kind) {
 		super(kind);						// kind를 상속 받음
 	}
 
@@ -19,38 +18,12 @@ public class Alcohol extends Stock implements StockInput {
 		System.out.print("Stock Name: ");
 		String name = input.next();			// 재고 이름 입력
 		this.setName(name);					// setId 메서드 호출: 인자 - id
-
+		
+		System.out.print("Expiration Date:");	
+		int date = input.nextInt();			// 재고 유통기한 입력
+		this.setDate(date);					// setDate 메서드 호출: 인자 - date
+		
 		char answer = 'x';					// answer을 x로 초기화
-		
-		// answer의 값이 'y', 'Y', 'n', 'N' 아닐 경우에 반복
-		while (answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N')
-		{
-			
-			System.out.println("Is there an Expiration date? (Y/N)");
-			
-			answer = input.next().charAt(0);				// charAt() - String으로 저장된 문자열 중에서 한 글자만 선택해서 char타입으로 변환
-															// 			- 괄호 안에 들어있는 인덱스 번호에 위치한 문자를 char 타입으로 변환
-			
-			if(answer == 'y' || answer == 'Y') {			// answer의 값이 'y' 또는 'Y' 일 경우
-				
-				System.out.print("Expiration Date:");	
-				int date = input.nextInt();					// 재고 유통기한 입력
-				this.setDate(date);							// setDate 메서드 호출: 인자 - date
-				break;										// break - 반복문 종료
-			}
-			
-			else if(answer == 'n' || answer == 'N') {		// answer의 값이 'n' 또는 'N' 일 경우
-				
-				this.setDate(0);							// setDate 메서드 호출: 인자 - 0
-				break;										// break - 반복문 종료
-			}
-			
-			else {
-			}
-			
-		}
-		
-		answer = 'x';					// answer을 x로 초기화
 		
 		// answer의 값이 'y', 'Y', 'n', 'N' 아닐 경우에 반복
 		while (answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N')
@@ -83,10 +56,7 @@ public class Alcohol extends Stock implements StockInput {
 					this.setOrder(0);						// setOrder 메서드 호출: 인자 - 0
 				}
 				
-				else {
-				}
-				
-				break;										// break - 반복문 종료
+				else break;										// break - 반복문 종료
 			}
 			
 			else if(answer == 'n' || answer == 'N') {		// answer의 값이 'n' 또는 'N' 일 경우
@@ -140,8 +110,11 @@ public class Alcohol extends Stock implements StockInput {
 		System.out.println("kind: " + kind + " name: " + name + " id: " + id + " date: " + date + " sale: " + sale + " order: "+ order);
 	}
 
+	@Override
 	public int getId() {
+		// TODO Auto-generated method stub
 		return 0;
 	}
+
 
 }
