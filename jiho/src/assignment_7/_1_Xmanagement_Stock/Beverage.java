@@ -105,14 +105,14 @@ public class Beverage extends Stock implements StockInput {
 		case Sundries:				// 잡화일 경우
 			stockKind = "Sundries";
 			break;
+			
+		default:
 		}
 		
 		System.out.println("kind: " + kind + " name: " + name + " id: " + id + " date: " + date + " sale: " + sale + " order: "+ order);
 	}
 
-	@Override
 	public int getId() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 

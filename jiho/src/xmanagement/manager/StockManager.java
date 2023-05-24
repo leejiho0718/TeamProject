@@ -116,11 +116,11 @@ public class StockManager {
 				}
 				
 				else {										// 1~7이 아닐 경우 다시 선택
-					System.out.println("Select num for Stock Kind from 1 to 7");
+					System.out.println("Please select again num for Stock Kind from 1 to 7");
 				}
 			}
 			catch(InputMismatchException e){
-				System.out.println("Please put an integer between 1 and 8!");
+				System.out.println("Please put an integer between 1 and 7!");
 				
 				if (input.hasNext()) {
 					input.next();
@@ -138,6 +138,13 @@ public class StockManager {
 		
 		System.out.print("Stock ID: ");
 		int stockId = input.nextInt();					// StockId를 입력 받음
+		int index = findIndex(stockId);
+		removeFromStock(index, stockId);
+		
+	}
+	
+	public int findIndex(int stockId) {
+		
 		int index = -1;									// index 변수를 -1로 초기화
 		
 		for(int i = 0; i<stocks.size(); i++)			// 0부터 1씩 증가하며 stocks 배열의 크기까지 반복  
@@ -148,17 +155,25 @@ public class StockManager {
 				break;									// break - 반복문 종료
 			}
 		}
+		
+		return index;
+	}
+	
+	public int removeFromStock(int index, int stockId) {
+		
 		if(index >=0){									// index가 0보다 클 경우
 			stocks.remove(index);						// stocks 배열의 index 값을 제거
 														// ㄴ> ArrayList.get(int index)
 														//    : 인자로 전달된 인덱스 위치의 아이템을 리스트에서 삭제, 객체는 리턴
 			System.out.println("the stock " + stockId + "is deleted");
+			return 1;
 		}
 
 		else{											// 위의 조건을 만족하지 않을 경우 -> return
 			System.out.println("the stock has been resistered");
-			return;
+			return -1;
 		}
+		
 	}
 	
 	// editStock() - Stock ID 입력하고 일치하는 Stock ID를 가진 stocks ArrayList 검색
@@ -167,58 +182,45 @@ public class StockManager {
 		System.out.print("Stock ID: ");
 		int stockId = input.nextInt();					// StockId 입력 받음
 		
-		for(int i = 0; i<stocks.size(); i++)			// 0부터 1씩 증가하며 stocks 배열의 크기까지 반복 
+		for(int i = 0; i<stocks.size()+1; i++)			// 0부터 1씩 증가하며 stocks 배열의 크기까지 반복 
 		{
 			
-			StockInput stockInput = stocks.get(i);				// Stock 클래스의 stock 변수 = stocks 배열의 i번째 인덱스에 있는 객체 
+			StockInput stock = stocks.get(i);				// Stock 클래스의 stock 변수 = stocks 배열의 i번째 인덱스에 있는 객체 
 														// ㄴ> ArrayList.get(int index): 인자 - 인덱스 -> 인덱스의 위치에 있는 객체를 리턴
 			
-			if(stockInput.getId() == stockId) 				// getId 메서드 호출 -> stock 변수의 값이 stockId의 값과 같을 경우
+			if(stock.getId() == stockId) 				// getId 메서드 호출 -> stock 변수의 값이 stockId의 값과 같을 경우
 			{				
 				int num = -1;							// num은 -1로 초기화
 				
 				while (num != 6) {							// num이 6이 아닐 때까지 반복
-					System.out.println("1. Edit Id");		// 1. 재고 고유 번호 수정
-					System.out.println("2. Edit Name");		// 2. 재고 이름 수정
-					System.out.println("3. Edit Date");		// 3. 재고 유통기한 수정
-					System.out.println("4. Edit Sale");		// 4. 재고 판매 갯수 수정
-					System.out.println("5. Edit Order");	// 5. 재고 주문(발주) 갯수 수정
-					System.out.println("6. Exit");			// 6. 종료
-					System.out.println("Select one number between 1-5");
+					
+					showEditMenu();
 					
 					num = input.nextInt();					// num 값 입력
 					
-					if (num==1) {							// num이 1일 경우
-						System.out.println("Stock Id");		
-						int id = input.nextInt();			// 재고 고유 번호 입력
-						stockInput.setId(id);					// setId 메서드 호출 -> stock 변수에 매게변수(id) 값을 저장
-					}
+					switch(num) {
 					
-					else if(num==2) {
-						System.out.println("Stock Name");
-						String name = input.nextLine();		// 재고 이름 입력
-						stockInput.setName(name);				// setId 메서드 호출 -> stock 변수에 매게변수(id) 값을 저장
-					}
+					case 1:									// num이 1일 경우
+						stock.setStockId(input);
+						break;
 					
-					else if(num==3) {
-						System.out.println("Expiration Date");
-						int date = input.nextInt();			// 재고 유통기한 입력
-						stockInput.setDate(date);				// setId 메서드 호출 -> stock 변수에 매게변수(id) 값을 저장
-					}
-					
-					else if(num==4) {
-						System.out.println("Today Sale");
-						int sale = input.nextInt();			// 재고 만매 갯소 입력
-						stockInput.setSale(sale);				// setId 메서드 호출 -> stock 변수에 매게변수(id) 값을 저장
-					}
-					
-					else if(num==5) {
-						System.out.println("Today Order");
-						int order = input.nextInt();		// 재고 주문(발주) 갯수 입력
-						stockInput.setOrder(order);				// setId 메서드 호출 -> stock 변수에 매게변수(id) 값을 저장
-					}
-					
-					else {									// 위의 조건이 다 맞지 않을 경우
+					case 2:									// num이 2일 경우
+						stock.setStockName(input);
+						break;
+						
+					case 3:									// num이 3일 경우
+						stock.setStockDate(input);
+						break;
+						
+					case 4:									// num이 4일 경우
+						stock.setStockSale(input);
+						break;
+						
+					case 5:									// num이 5일 경우
+						stock.setStockOrder(input);
+						break;
+						
+					default:								// 위의 조건이 다 맞지 않을 경우
 						continue;							// 계속
 					}
 					
@@ -245,5 +247,16 @@ public class StockManager {
 	
 		}
 
+	}
+	
+	public void showEditMenu() {
+		System.out.println("1. Edit Id");		// 1. 재고 고유 번호 수정
+		System.out.println("2. Edit Name");		// 2. 재고 이름 수정
+		System.out.println("3. Edit Date");		// 3. 재고 유통기한 수정
+		System.out.println("4. Edit Sale");		// 4. 재고 판매 갯수 수정
+		System.out.println("5. Edit Order");	// 5. 재고 주문(발주) 갯수 수정
+		System.out.println("6. Exit");			// 6. 종료
+		System.out.println("Select one number between 1-6");
+		
 	}
 }
