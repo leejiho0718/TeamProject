@@ -136,6 +136,6 @@ public class Cigarette extends Stock implements StockInput {
 	}
 
 	public int getId() {
-		return 0;
+		return id;
 	}
 }
