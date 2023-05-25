@@ -23,6 +23,6 @@ public class Cigarette extends Stock{
 	}
 
 	public int getId() {
-		return 0;
+		return id;
 	}
 }

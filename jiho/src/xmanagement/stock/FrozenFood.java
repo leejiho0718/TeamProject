@@ -26,7 +26,7 @@ public class FrozenFood extends Stock{
 	}
 
 	public int getId() {
-		return 0;
+		return id;
 	}
 
 }

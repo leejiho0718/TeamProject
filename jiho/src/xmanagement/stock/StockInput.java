@@ -12,7 +12,7 @@ public interface StockInput {
 	
 	public void setName(String name);
 	
-	public void setDate(int date); //throws DateFormatException;
+	public void setDate(int date) throws DateFormatException;
 
 	public void setSale(int sale);
 

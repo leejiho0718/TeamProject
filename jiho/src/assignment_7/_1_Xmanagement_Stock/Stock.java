@@ -1,8 +1,6 @@
 package assignment_7._1_Xmanagement_Stock;
 
-import java.util.Scanner;
-
-public abstract class Stock {
+public abstract class Stock{
 	
 	protected StockKind kind = StockKind.FrozenFood;	// 재고 종류 - 디폴트 값 = 냉장식품
 	protected String name;								// 재고 이름

@@ -139,9 +139,9 @@ public class Alcohol extends Stock implements StockInput {
 		
 		System.out.println("kind: " + kind + " name: " + name + " id: " + id + " date: " + date + " sale: " + sale + " order: "+ order);
 	}
-
+	
 	public int getId() {
 		return 0;
 	}
-
+	
 }

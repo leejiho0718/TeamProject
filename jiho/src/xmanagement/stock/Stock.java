@@ -81,12 +81,13 @@ public abstract class Stock implements StockInput {
 		return date;
 	}
 	
-	public void setDate(int date) { //throws DateFormatException {
-//		String targetDate = "2023";
-//		String inputDate = String.valueOf(date);
-//		if(!inputDate.contains(targetDate) || inputDate.equals("")) {
-//			throw new DateFormatException();
-//		}
+	public void setDate(int date) throws DateFormatException {
+		String targetDate = "2023";
+		String inputDate = String.valueOf(date);
+		if((!inputDate.contains(targetDate) || inputDate.equals("0")) || inputDate.length() != 8) {
+			throw new DateFormatException();
+		}
+		
 		this.date = date;
 	}
 
@@ -125,29 +126,23 @@ public abstract class Stock implements StockInput {
 	
 	public void setStockDate(Scanner input) {
 		
-		System.out.println("Stock date");		
-		int date = input.nextInt();			// 재고 고유 번호 입력
-		this.setDate(date);					// setId 메서드 호출 -> stock 변수에 매게변수(id) 값을 저장
-	
+		String targetDate = "2023";
 		
-//		String targetDate = "2023";
-//		
-//		String inputDate = String.valueOf(date);
-//		
-//		while(!inputDate.contains(targetDate)) {
-//			
-//			System.out.println("Expiration Date:");
-//			
-//			int date = input.nextInt();
-//			try {
-//				this.setDate(date);
-//			}
-//			catch( DateFormatException e ){
-//				System.out.println("Incorrect Date Format, put the Expiration Date that contains 2023");
-//				e.printStackTrace();
-//				
-//			}
-//		}
+		String inputDate = String.valueOf(date);
+		
+		while(!inputDate.contains(targetDate) || inputDate.length()!=8) {
+			
+			System.out.println("Expiration Date:");
+			
+			inputDate = input.next();
+			try {
+				int date = Integer.valueOf(inputDate);
+				this.setDate(date);
+			}
+			catch( DateFormatException e ){
+				System.out.println("Incorrect Date Format, put the Expiration Date that contains 2023");
+			}
+		}
 	
 	}
 	
@@ -178,22 +173,25 @@ public abstract class Stock implements StockInput {
 			
 			answer = input.next().charAt(0);				// charAt() - String으로 저장된 문자열 중에서 한 글자만 선택해서 char타입으로 변환
 															// 			- 괄호 안에 들어있는 인덱스 번호에 위치한 문자를 char 타입으로 변환
-			
-			if(answer == 'y' || answer == 'Y') {			// answer의 값이 'y' 또는 'Y' 일 경우
+			try {
+				if(answer == 'y' || answer == 'Y') {			// answer의 값이 'y' 또는 'Y' 일 경우
+					
+					setStockDate(input);
+					break;										// break - 반복문 종료
+				}
 				
-				setStockDate(input);
-				break;										// break - 반복문 종료
-			}
-			
-			else if(answer == 'n' || answer == 'N') {		// answer의 값이 'n' 또는 'N' 일 경우
+				else if(answer == 'n' || answer == 'N') {		// answer의 값이 'n' 또는 'N' 일 경우
+					
+					this.setDate(0);							// setDate 메서드 호출: 인자 - 0
+					break;										// break - 반복문 종료
+				}
 				
-				this.setDate(0);							// setDate 메서드 호출: 인자 - 0
-				break;										// break - 반복문 종료
+				else {
+				}
 			}
-			
-			else {
+			catch(DateFormatException e) {
+				System.out.println("Incorrect Date Format, put the Expiration Date that contains 2023");
 			}
-			
 		}
 	}
 	

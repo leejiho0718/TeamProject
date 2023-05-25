@@ -151,6 +151,7 @@ public class StockManager {
 	// editStock() - Stock ID 입력하고 일치하는 Stock ID를 가진 stocks ArrayList 검색
 	//               -> 편집할 필드(ID, 이름, 판매 또는 주식 입력)를 사용자에게 묻는 메서드입니다.
 	public void editStock() {
+		
 		System.out.print("Stock ID: ");
 		int stockId = input.nextInt();					// StockId 입력 받음
 		
@@ -159,7 +160,7 @@ public class StockManager {
 			
 			Stock stock = stocks.get(i);				// Stock 클래스의 stock 변수 = stocks 배열의 i번째 인덱스에 있는 객체 
 														// ㄴ> ArrayList.get(int index): 인자 - 인덱스 -> 인덱스의 위치에 있는 객체를 리턴
-			
+
 			if(stock.getId() == stockId) 				// getId 메서드 호출 -> stock 변수의 값이 stockId의 값과 같을 경우
 			{				
 				int num = -1;							// num은 -1로 초기화

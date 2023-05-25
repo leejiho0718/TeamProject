@@ -3,7 +3,7 @@ package assignment_7._1_Xmanagement_Stock;
 import java.util.Scanner;
 
 public interface StockInput {
-
+	
 	public int getId();
 	
 	public void setId(int id);

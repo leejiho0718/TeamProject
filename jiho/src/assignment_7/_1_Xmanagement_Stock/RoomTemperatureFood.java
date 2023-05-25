@@ -111,6 +111,6 @@ public class RoomTemperatureFood extends Stock implements StockInput {
 	}
 
 	public int getId() {
-		return 0;
+		return id;
 	}
 }

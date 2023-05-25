@@ -17,7 +17,7 @@ import xmanagement.stock.Sundries;
 
 public class StockManager {
 	
-	ArrayList<StockInput> stocks = new ArrayList<StockInput>();
+	ArrayList<StockInput>stocks = new ArrayList<StockInput>();
 	Scanner input;
 	
 	// Manager(Scanner input) - Scanner 객체를 받아 입력 변수를 초기화하는 생성자
@@ -32,7 +32,7 @@ public class StockManager {
 		StockInput stockInput;			
 		while (kind != 8) {		// 재고는 1~7까지 있으며 8이면 반복문 종료
 			
-			try {
+			try {				// try - 에러가 발생할 수 있는 코드
 			
 				System.out.println("1. Frozen Food");							// 1. 냉동 식품
 				System.out.println("2. Refrigeration Food");					// 2. 냉장 식품
@@ -118,7 +118,8 @@ public class StockManager {
 				else {										// 1~7이 아닐 경우 다시 선택
 					System.out.println("Please select again num for Stock Kind from 1 to 7");
 				}
-			}
+				
+			}// try
 			catch(InputMismatchException e){
 				System.out.println("Please put an integer between 1 and 7!");
 				
@@ -126,11 +127,12 @@ public class StockManager {
 					input.next();
 				}
 				kind = -1;
-			}
+			}// catch
 				
-		}
+		}// while
 			
-	}
+	}// addStock()
+	
 	
 	// deleteStock() - 사용자에게 Stock ID를 입력받아 
 	//                 ArrayList에서 일치하는 Stock ID를 발견 및 삭제하는 메서드
@@ -138,27 +140,34 @@ public class StockManager {
 		
 		System.out.print("Stock ID: ");
 		int stockId = input.nextInt();					// StockId를 입력 받음
-		int index = findIndex(stockId);
-		removeFromStock(index, stockId);
+		int index = findIndex(stockId);					// findIndex 메서드 호출 - 인수: stockId
+		removeFromStock(index, stockId);				// removeFromStock 메서드 호출 - 인수: index, stockId
 		
 	}
 	
+	
+	// findIndex() - stocks의 인덱스를 찾는 메서드
 	public int findIndex(int stockId) {
 		
 		int index = -1;									// index 변수를 -1로 초기화
 		
 		for(int i = 0; i<stocks.size(); i++)			// 0부터 1씩 증가하며 stocks 배열의 크기까지 반복  
 		{
+			
 			if(stocks.get(i).getId() == stockId) {		// 입력받은 stockId가 stocks 배열의 i번째 인덱스의 Id와 같을 경우
 														// ㄴ> ArrayList.get(int index): 인자 - 인덱스 -> 인덱스의 위치에 있는 객체를 리턴
 				index = i;								// index = i
 				break;									// break - 반복문 종료
-			}
-		}
+			}// if	
+			
+		}// for
 		
 		return index;
-	}
+		
+	}// findIndex()
 	
+	
+	// removeFromStock() - 인덱스의 위치의 아이템을 삭제 및 리턴하는 메서드
 	public int removeFromStock(int index, int stockId) {
 		
 		if(index >=0){									// index가 0보다 클 경우
@@ -166,12 +175,12 @@ public class StockManager {
 														// ㄴ> ArrayList.get(int index)
 														//    : 인자로 전달된 인덱스 위치의 아이템을 리스트에서 삭제, 객체는 리턴
 			System.out.println("the stock " + stockId + "is deleted");
-			return 1;
+			return 1;									// 1을 반환
 		}
 
 		else{											// 위의 조건을 만족하지 않을 경우 -> return
 			System.out.println("the stock has been resistered");
-			return -1;
+			return -1;									// -1을 반환
 		}
 		
 	}
@@ -182,7 +191,7 @@ public class StockManager {
 		System.out.print("Stock ID: ");
 		int stockId = input.nextInt();					// StockId 입력 받음
 		
-		for(int i = 0; i<stocks.size()+1; i++)			// 0부터 1씩 증가하며 stocks 배열의 크기까지 반복 
+		for(int i = 0; i<stocks.size(); i++)			// 0부터 1씩 증가하며 stocks 배열의 크기까지 반복 
 		{
 			
 			StockInput stock = stocks.get(i);				// Stock 클래스의 stock 변수 = stocks 배열의 i번째 인덱스에 있는 객체 
@@ -227,12 +236,9 @@ public class StockManager {
 				}		
 				
 			}
-			
-			
-	
+
 		}
 
-		
 	}
 	
 	// viewStocks() - stocks ArrayList에 있는 모든 주식의 정보를 출력하는 메소드
