@@ -1,19 +1,35 @@
 package xmanagement.manager;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import xmanagement.log.EventLogger;
+
 public class MenuManager {
+	
+	static EventLogger logger = new EventLogger("log.txt");
+
+	
 	public static void main(String[]arg) {
 
 		Scanner input = new Scanner(System.in);
-		StockManager manager = new StockManager(input);
-		
-	
-		selectMenu(input, manager);
+		StockManager stockManager = getObject("stockmanager.ser");
+		if(stockManager == null) {
+			stockManager = new StockManager(input);
+
+		}
+
+		selectMenu(input, stockManager);
+		putObject(stockManager, "stockmanager.ser");
 	}
 	
-	public static void selectMenu(Scanner input, StockManager manager) {
+	public static void selectMenu(Scanner input, StockManager stockManager) {
 		
 		int num = -1;								// num = -1로 초기화
 		while (num != 5) {							// num이 6이 아니면 반복 -> 즉, num == 6이면 반복 종료
@@ -28,20 +44,27 @@ public class MenuManager {
 				switch(num) {						// switch 조건문 - 인수: num
 				
 				case 1:								// num = 1 일 경우 -> 재고 정보 추가	
-					manager.addStock();				// manager 개체의 addstock 메서드 불러옴
+					stockManager.addStock();				// manager 개체의 addstock 메서드 불러옴
+					logger.log("add a stock");
 					break;							// break를 통해 조건문을 빠져나옴
 
 	
 				case 2: 							// num = 2 일 경우 -> 재고 정보 삭제		
-					manager.deleteStock();			// manager 개체의  deleteStock 메서드 불러옴
+					stockManager.deleteStock();			// manager 개체의  deleteStock 메서드 불러옴
+					logger.log("delete a stock");
+
 					break;							// break를 통해 조건문을 빠져나옴
 		
 				case 3:								// num = 3 일 경우 -> 재고 정보 수정
-					manager.editStock();			// manager 개체의  editStoc 메서드 불러옴
+					stockManager.editStock();			// manager 개체의  editStoc 메서드 불러옴
+					logger.log("edit a stock");
+
 					break;							// break를 통해 조건문을 빠져나옴
 			
 				case 4:								// num = 4 일 경우-> 재고 정보 확인
-					manager.viewStocks();			// manager 개체의 viewStock 메서드 불러옴
+					stockManager.viewStocks();			// manager 개체의 viewStock 메서드 불러옴
+					logger.log("view stocks");
+
 					break;							// break를 통해 조건문을 빠져나옴
 				
 				case 5:								// num = 5 일 경우 -> 프로그램 종료
@@ -83,6 +106,46 @@ public class MenuManager {
 		System.out.println("5. Exit");				// 프로그램 종료
 		System.out.print("Select one number between 1-5: ");
 		
+	}
+	
+	public static StockManager getObject(String filename) {
+		StockManager stockManager = null;
+		try {
+			FileInputStream file = new FileInputStream(filename);
+			ObjectInputStream in = new ObjectInputStream(file);
+			
+			stockManager = (StockManager) in.readObject();
+			in.close();
+			file.close();
+		}
+		catch(FileNotFoundException e){
+			return stockManager;
+		}
+		catch(IOException e) {
+			e.printStackTrace();
+		}catch(ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		return stockManager;
+	}
+	
+	public static void putObject(StockManager stockManager, String filename) {
+		try {
+			FileOutputStream file = new FileOutputStream(filename);
+			ObjectOutputStream out = new ObjectOutputStream(file);
+			
+			out.writeObject(stockManager);
+			out.close();
+			file.close();
+		}
+		catch(FileNotFoundException e){
+			e.printStackTrace();
+		}
+		catch(IOException e) {
+			e.printStackTrace();
+		}
+	
 	}
 	
 }

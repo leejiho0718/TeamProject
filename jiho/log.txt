@@ -1,0 +1,2 @@
+5¿ù 29, 2023 10:48:17 ¿ÀÈÄ xmanagement.log.EventLogger log
+INFO: add a stock

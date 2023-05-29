@@ -1,11 +1,16 @@
 package xmanagement.stock;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 import xmanagement.exception.DateFormatException;
 
-public abstract class Stock implements StockInput {
+public abstract class Stock implements StockInput, Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3847382418549831835L;
 	protected StockKind kind = StockKind.FrozenFood;	// 재고 종류 - 디폴트 값 = 냉장식품
 	protected String name;								// 재고 이름
 	protected int id;									// 재고 고유 번호

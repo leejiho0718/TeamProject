@@ -1,5 +1,6 @@
 package xmanagement.manager;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -14,10 +15,15 @@ import xmanagement.stock.StockInput;
 import xmanagement.stock.StockKind;
 import xmanagement.stock.Sundries;
 
-public class StockManager {
+public class StockManager implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8570156450382091273L;
 	
 	ArrayList<StockInput>stocks = new ArrayList<StockInput>();
-	Scanner input;
+	transient Scanner input;
 	
 	// Manager(Scanner input) - Scanner 객체를 받아 입력 변수를 초기화하는 생성자
 	StockManager(Scanner input){
