@@ -8,19 +8,24 @@ public class Cigarette extends Stock{
 	public Cigarette(StockKind kind) {
 		super(kind);						// kind를 상속 받음
 	}
-
+	
+	// 
 	public void getUserInput(Scanner input){
 		
 		setStockId(input);
 		setStockName(input);
 		setStockDateYN(input);
 		setStockSaleYN(input);
-	}
+		
+	} 
+	
+	// 
 	public void PrintInfo() {
 		
 		String stockKind = getStockKind();
 		System.out.println("kind: " + kind + " name: " + name + " id: " + id + " date: " + date + " sale: " + sale + " order: "+ order);
-	}
+		
+	} 
 
 	public int getId() {
 		return id;

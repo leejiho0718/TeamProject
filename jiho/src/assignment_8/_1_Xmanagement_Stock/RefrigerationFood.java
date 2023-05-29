@@ -1,12 +1,11 @@
-package xmanagement.stock;
+package assignment_8._1_Xmanagement_Stock;
 
 import java.util.Scanner;
 
-public class Alcohol extends Stock {
+public class RefrigerationFood extends Stock{
 	
-	
-	// Alcohol 생성자 - 매개변수: StockKind 클래스 타입의 kind 변수 
-	public Alcohol(StockKind kind) {
+	// RefrigerationFood 생성자 - 매개변수: StockKind 클래스 타입의 kind 변수 
+	public RefrigerationFood(StockKind kind) {
 		super(kind);						// kind를 상속 받음
 	}
 
@@ -14,7 +13,7 @@ public class Alcohol extends Stock {
 		
 		setStockId(input);
 		setStockName(input);
-		setStockDateYN(input);
+		setStockDate(input);			
 		setStockSaleYN(input);
 	
 	}
@@ -22,12 +21,10 @@ public class Alcohol extends Stock {
 	public void PrintInfo() {
 		
 		String stockKind = getStockKind();
-		
 		System.out.println("kind: " + kind + " name: " + name + " id: " + id + " date: " + date + " sale: " + sale + " order: "+ order);
 	}
 
 	public int getId() {
 		return id;
 	}
-
 }

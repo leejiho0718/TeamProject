@@ -1,4 +1,4 @@
-package xmanagement.manager;
+package assignment_8._1_Xmanagement_Manager;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
