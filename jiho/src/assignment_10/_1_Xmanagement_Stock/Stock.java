@@ -1,9 +1,9 @@
-package xmanagement.stock;
+package assignment_10._1_Xmanagement_Stock;
 
 import java.io.Serializable;
 import java.util.Scanner;
 
-import xmanagement.exception.DateFormatException;
+import assignment_10._1_Xmanagement_Exception.DateFormatException;
 
 public abstract class Stock implements StockInput, Serializable {
 	/**

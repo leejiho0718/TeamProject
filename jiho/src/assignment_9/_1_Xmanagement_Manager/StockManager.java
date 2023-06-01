@@ -1,26 +1,27 @@
-package xmanagement.manager;
+package assignment_9._1_Xmanagement_Manager;
+
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import xmanagement.stock.Alcohol;
-import xmanagement.stock.Beverage;
-import xmanagement.stock.Cigarette;
-import xmanagement.stock.FrozenFood;
-import xmanagement.stock.RefrigerationFood;
-import xmanagement.stock.RoomTemperatureFood;
-import xmanagement.stock.StockInput;
-import xmanagement.stock.StockKind;
-import xmanagement.stock.Sundries;
+import assignment_9._1_Xmanagement_Stock.Alcohol;
+import assignment_9._1_Xmanagement_Stock.Beverage;
+import assignment_9._1_Xmanagement_Stock.Cigarette;
+import assignment_9._1_Xmanagement_Stock.FrozenFood;
+import assignment_9._1_Xmanagement_Stock.RefrigerationFood;
+import assignment_9._1_Xmanagement_Stock.RoomTemperatureFood;
+import assignment_9._1_Xmanagement_Stock.StockInput;
+import assignment_9._1_Xmanagement_Stock.StockKind;
+import assignment_9._1_Xmanagement_Stock.Sundries;
 
 public class StockManager implements Serializable {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -8570156450382091273L;
+	private static final long serialVersionUID = 1023507264458879123L;
 	ArrayList<StockInput>stocks = new ArrayList<StockInput>();
 	transient Scanner input;
 	

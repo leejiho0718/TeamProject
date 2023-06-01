@@ -1,5 +1,4 @@
-package xmanagement.manager;
-
+package assignment_9._1_Xmanagement_Manager;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -10,7 +9,7 @@ import java.io.ObjectOutputStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import xmanagement.log.EventLogger;
+import assignment_9._1_Xmanagement_Log.EventLogger;
 
 public class MenuManager {
 	
