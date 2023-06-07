@@ -1,4 +1,4 @@
-package xmanagement.gui;
+package assignment_11._1_Xmanagement_Gui;
 
 import java.awt.BorderLayout;
 
@@ -7,8 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import xmanagement.listener.ButtonAddListener;
-import xmanagement.listener.ButtonViewListener;
+import assignment_11._1_Xmanagement_Listener.ButtonAddListener;
+import assignment_11._1_Xmanagement_Listener.ButtonViewListener;
 
 public class MenuSelection extends JPanel{
 

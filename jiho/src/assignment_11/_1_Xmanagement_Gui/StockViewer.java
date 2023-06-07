@@ -1,4 +1,4 @@
-package xmanagement.gui;
+package assignment_11._1_Xmanagement_Gui;
 
 import java.util.Vector;
 
@@ -8,8 +8,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-import xmanagement.manager.StockManager;
-import xmanagement.stock.StockInput;
+import assignment_11._1_Xmanagement_Manager.StockManager;
+import assignment_11._1_Xmanagement_Stock.StockInput;
 
 public class StockViewer extends JPanel{
 	

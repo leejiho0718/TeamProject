@@ -1,8 +1,8 @@
-package xmanagement.stock;
+package assignment_11._1_Xmanagement_Stock;
 
 import java.util.Scanner;
 
-import xmanagement.exception.DateFormatException;
+import assignment_11._1_Xmanagement_Exception.DateFormatException;
 
 public interface StockInput {
 

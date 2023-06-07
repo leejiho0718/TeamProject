@@ -1,4 +1,4 @@
-package xmanagement.gui;
+package assignment_11._1_Xmanagement_Gui;
 
 public class GuiTest {
 
